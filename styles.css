@@ -1,0 +1,36 @@
+/*
+  Kim Tae Seob Landing Page
+  External enhancement stylesheet
+
+  원본 화면을 그대로 유지하기 위해 기존 핵심 스타일은 index.html 안에
+  보존되어 있습니다. 이후 디자인을 추가하거나 일부 값을 덮어쓸 때
+  이 파일을 사용하면 됩니다.
+*/
+
+:root {
+  --brand-navy: #0b2e59;
+  --brand-gold: #b08d57;
+  --brand-white: #ffffff;
+}
+
+/* 키보드 사용자를 위한 접근성 보완 — 기존 레이아웃에는 영향을 주지 않습니다. */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 3px;
+}
+
+/* 움직임 최소화 설정을 사용하는 방문자를 위한 보완 */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="김태섭 Manufacturing Innovation Advisor — 제조혁신, Smart Manufacturing, 기술전략, 설비 신뢰성, SCM 및 조직운영" />
+  <meta name="theme-color" content="#0B2E59" />
+  <title>김태섭 | Manufacturing Innovation Advisor</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root{
+      --navy:#0B2E59;
+      --navy-2:#123F73;
+      --gold:#B08D57;
+      --ink:#26313d;
+      --muted:#66717e;
+      --line:#e5e9ee;
+      --soft:#f5f7fa;
+      --white:#fff;
+      --shadow:0 20px 55px rgba(11,46,89,.12);
+      --radius:20px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.72;
+      letter-spacing:-.02em;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 40px));margin:auto}
+    .eyebrow{
+      color:var(--gold);font-weight:800;letter-spacing:.13em;
+      text-transform:uppercase;font-size:.78rem
+    }
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(2.45rem,6vw,5.5rem);line-height:1.05;letter-spacing:-.055em}
+    h2{font-size:clamp(2rem,3.8vw,3.25rem);line-height:1.15;letter-spacing:-.045em}
+    h3{font-size:1.18rem;line-height:1.35}
+    .lead{font-size:clamp(1.05rem,1.8vw,1.35rem);color:#485563}
+    .muted{color:var(--muted)}
+    .section{padding:110px 0}
+    .section.soft{background:var(--soft)}
+    .section.dark{background:var(--navy);color:white}
+    .section-head{max-width:780px;margin-bottom:48px}
+    .section-head p{margin-bottom:0}
+    .grid{display:grid;gap:24px}
+    .grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{
+      background:white;border:1px solid var(--line);border-radius:var(--radius);
+      padding:30px;box-shadow:0 10px 28px rgba(11,46,89,.055);
+      transition:.25s ease;
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d6dde5}
+    .icon{
+      width:48px;height:48px;border-radius:14px;
+      display:grid;place-items:center;background:#edf3f9;color:var(--navy);
+      font-size:1.35rem;margin-bottom:18px;font-weight:900
+    }
+    .btns{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      min-height:48px;padding:12px 20px;border-radius:999px;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      font-weight:800;border:1px solid transparent;transition:.2s ease;
+    }
+    .btn.primary{background:var(--navy);color:white}
+    .btn.primary:hover{background:var(--navy-2);transform:translateY(-2px)}
+    .btn.ghost{border-color:#cbd4de;color:var(--navy);background:white}
+    .btn.gold{background:var(--gold);color:white}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:50;
+      background:rgba(255,255,255,.88);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(229,233,238,.9)
+    }
+    .nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:900;color:var(--navy);letter-spacing:-.035em}
+    .brand small{font-weight:700;color:var(--gold);display:block;font-size:.66rem;letter-spacing:.04em}
+    .menu{display:flex;gap:24px;align-items:center;font-size:.92rem;font-weight:750;color:#455261}
+    .menu a:hover{color:var(--navy)}
+    .menu-toggle{display:none;border:0;background:transparent;font-size:1.5rem;color:var(--navy)}
+    .hero{
+      min-height:100vh;padding:130px 0 80px;display:flex;align-items:center;
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 75% 25%,rgba(176,141,87,.15),transparent 25%),
+        radial-gradient(circle at 85% 70%,rgba(25,86,140,.14),transparent 28%),
+        linear-gradient(135deg,#fff 0%,#f4f8fc 62%,#eaf1f7 100%);
+    }
+    .hero:before,.hero:after{
+      content:"";position:absolute;pointer-events:none;border:1px solid rgba(11,46,89,.08);
+      transform:rotate(-12deg)
+    }
+    .hero:before{width:500px;height:800px;right:-120px;top:-130px}
+    .hero:after{width:340px;height:620px;right:160px;top:40px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center;position:relative;z-index:2}
+    .hero h1 span{display:block;color:var(--navy)}
+    .role{font-weight:850;color:var(--gold);font-size:clamp(1.1rem,2.2vw,1.55rem);margin-bottom:22px}
+    .hero-copy{max-width:710px}
+    .hero-points{display:flex;flex-wrap:wrap;gap:9px;margin:25px 0 32px}
+    .pill{font-size:.9rem;font-weight:800;color:var(--navy);background:white;border:1px solid #dbe3eb;padding:8px 13px;border-radius:999px}
+    .portrait-wrap{position:relative;max-width:440px;margin:auto}
+    .portrait-frame{
+      border-radius:32px;overflow:hidden;background:white;padding:12px;
+      box-shadow:0 28px 70px rgba(11,46,89,.2);position:relative;z-index:2
+    }
+    .portrait-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:23px}
+    .portrait-note{
+      position:absolute;right:-34px;bottom:35px;background:var(--navy);
+      color:white;padding:18px 22px;border-radius:16px;z-index:3;box-shadow:var(--shadow)
+    }
+    .portrait-note strong{font-size:1.45rem;display:block}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .quote{
+      background:var(--navy);color:white;border-radius:28px;padding:42px;
+      position:relative;overflow:hidden
+    }
+    .quote:after{content:"“";position:absolute;right:20px;bottom:-45px;font-size:190px;color:rgba(255,255,255,.08);line-height:1}
+    .career-list{display:grid;gap:15px;margin-top:28px}
+    .career-row{display:grid;grid-template-columns:190px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+    .career-row strong{color:var(--navy)}
+    .metrics .metric{text-align:left;padding:30px 24px}
+    .metric strong{font-size:clamp(2rem,4vw,3.25rem);color:var(--navy);display:block;line-height:1}
+    .metric span{display:block;margin-top:12px;color:var(--muted)}
+    .metric small{color:var(--gold);font-weight:800}
+    .timeline{position:relative;margin-top:30px}
+    .timeline:before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:2px;background:#d9e1e9}
+    .time-item{position:relative;padding-left:56px;margin-bottom:34px}
+    .time-item:before{content:"";position:absolute;left:9px;top:7px;width:20px;height:20px;border-radius:50%;background:var(--gold);border:5px solid #f6efe4}
+    .time-item .year{font-size:.83rem;color:var(--gold);font-weight:900}
+    .time-item h3{margin:3px 0 4px;color:var(--navy)}
+    .project{display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:34px 0;border-top:1px solid var(--line)}
+    .project:first-child{border-top:0}
+    .project .tag{display:inline-block;color:var(--gold);font-weight:900;font-size:.82rem;margin-bottom:8px}
+    .project ul{margin:0;padding-left:20px;color:#52606d}
+    .cta{
+      border-radius:30px;padding:50px;
+      background:linear-gradient(135deg,var(--navy),#174e83);
+      color:white;display:flex;align-items:center;justify-content:space-between;gap:30px
+    }
+    footer{background:#071f3d;color:#dce6ef;padding:36px 0}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .small{font-size:.88rem}
+    .reveal{opacity:0;transform:translateY(22px);transition:.7s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:960px){
+      .menu-toggle{display:block}
+      .menu{
+        display:none;position:absolute;top:72px;left:20px;right:20px;
+        flex-direction:column;align-items:stretch;background:white;padding:20px;
+        border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)
+      }
+      .menu.open{display:flex}
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .hero-copy{order:2}.portrait-wrap{order:1;max-width:330px}
+      .portrait-note{right:-5px}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:680px){
+      .container{width:min(100% - 28px,var(--max))}
+      .section{padding:78px 0}
+      .hero{padding-top:105px}
+      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .career-row{grid-template-columns:1fr;gap:5px}
+      .project{grid-template-columns:1fr}
+      .cta{padding:34px 24px;align-items:flex-start;flex-direction:column}
+      .footer-row{flex-direction:column;align-items:flex-start}
+      .portrait-note{position:relative;right:auto;bottom:auto;margin:-16px 16px 0}
+      h1{font-size:2.6rem}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">KIM TAE SEOB<small>MANUFACTURING INNOVATION ADVISOR</small></a>
+    <button class="menu-toggle" aria-label="메뉴 열기">☰</button>
+    <nav class="menu">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#career">Career</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"> Profile</div>
+        <h1>김태섭<span>Manufacturing Innovation</span></h1>
+        <div class="role">Manufacturing Innovation Advisor</div>
+        <p class="lead"><strong>기술과 경영을 연결하여 제조혁신을 실행하는 파트너</strong></p>
+        <p class="muted">38년 4개월의 산업 현장 경험을 바탕으로 제조혁신, Smart Manufacturing, 기술전략, 설비 신뢰성 및 조직운영 분야의 실행 가능한 해법을 제안합니다.</p>
+        <div class="hero-points">
+          <span class="pill">Manufacturing Innovation</span>
+          <span class="pill">Smart Manufacturing</span>
+          <span class="pill">Technology Strategy</span>
+          <span class="pill">Operational Excellence</span>
+        </div>
+        <div class="btns">
+          <a class="btn primary" href="mailto:tsokay.kim@gmail.com?subject=제조혁신 상담문의">상담 문의</a>
+          <a class="btn ghost" href="assets/Kim_Tae_Seob_Resume.pdf" download>이력서 다운로드</a>
+          <a class="btn ghost" href="assets/Kim_Tae_Seob_Slide.ppsx" download>소개 프리젠테이션</a>
+          <a class="btn ghost" href="tel:+821035193852">전화 연결</a>
+        </div>
+      </div>
+      <div class="portrait-wrap reveal">
+        <div class="portrait-frame"><img src="assets/profile.png" alt="김태섭 프로필 사진"></div>
+        <div class="portrait-note"><strong>38년 4개월</strong><span>기술개발부터 제조혁신까지</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="quote reveal">
+        <div class="eyebrow">About Me</div>
+        <h2>현장 경험을<br>경영성과로 연결합니다.</h2>
+        <p>삼성전자, 삼성상용차, 삼성디스플레이에서 기술개발, 기술관리, 전략기획, 기술인사, 기술기획, 제조혁신 및 생산지원 업무를 수행했습니다.</p>
+        <p>연구조직과 생산현장을 연결하는 실행형 리더로서 데이터 기반 문제 정의와 현장 중심 개선을 추진해 왔습니다.</p>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Career Summary</div>
+        <h2>기술과 제조를 아우르는 경력</h2>
+        <div class="career-list">
+          <div class="career-row"><strong>Samsung Electronics</strong><span>1990.10–1996.07 · CAD 응용 SW 개발</span></div>
+          <div class="career-row"><strong>Samsung Commercial Vehicles</strong><span>1996.08–2000.11 · 기술관리 · 제품개발 프로세스 · 시스템 구축</span></div>
+          <div class="career-row"><strong>Samsung Electronics</strong><span>2000.12–2012.03 · 전략기획 · 기술인사 · LCD 연구운영</span></div>
+          <div class="career-row"><strong>Samsung Display</strong><span>2012.04–2026.06 · 기술전략 · 제조혁신 · 생산지원</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="expertise">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Core Expertise</div>
+        <h2>핵심 전문 분야</h2>
+        <p class="lead">현장 운영부터 기술전략까지, 제조 경쟁력을 높이는 전 과정을 지원합니다.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card reveal"><div class="icon">🏭</div><h3>Manufacturing Innovation</h3><p>생산성 향상, 제조 비효율 제거, 현장 최적화 및 혁신과제 실행</p></article>
+        <article class="card reveal"><div class="icon">◉</div><h3>Smart Manufacturing</h3><p>IoT·PLC·Grafana 기반 상태 가시화와 데이터 기반 CBM 체계</p></article>
+        <article class="card reveal"><div class="icon">↗</div><h3>Technology Strategy</h3><p>중장기 기술로드맵, 기술투자 검토, 과제 연계와 자원배분</p></article>
+        <article class="card reveal"><div class="icon">⚙</div><h3>Equipment Reliability</h3><p>LCC 관점 설비 신뢰성 고도화, 고장 구조 분석 및 예방정비</p></article>
+        <article class="card reveal"><div class="icon">▣</div><h3>SCM Optimization</h3><p>부품 출고 프로세스, 부외부품, 교체주기와 재고 정합성 개선</p></article>
+        <article class="card reveal"><div class="icon">◎</div><h3>Organization Leadership</h3><p>연구·엔지니어 조직 운영, 평가체계 정비와 변화관리</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section metrics" id="achievements">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Verified Achievements</div>
+        <h2>검증 가능한 데이터로 말합니다.</h2>
+        <p class="lead">공개 페이지에는 최신 이력서에 근거한 수치만 사용했습니다.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="card metric reveal"><strong>27,240</strong><small>건</small><span>최근 5년간 엔지니어링 작업 데이터 분석</span></div>
+        <div class="card metric reveal"><strong>5,313</strong><small>건 · 20%</small><span>설비 고장 작업 구조 진단</span></div>
+        <div class="card metric reveal"><strong>9,677</strong><small>건</small><span>등록부품 데이터 관리</span></div>
+        <div class="card metric reveal"><strong>3,775</strong><small>건 · 39%</small><span>부품 교체주기 정보 업데이트</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Representative Projects</div>
+        <h2>대표 제조혁신 사례</h2>
+      </div>
+      <div class="project reveal">
+        <div><span class="tag">EQUIPMENT RELIABILITY</span><h3>연구라인 설비 신뢰성 고도화</h3><p class="muted">설비 고장 구조를 데이터로 진단하고, 개선 우선순위와 예방정비 기반을 강화했습니다.</p></div>
+        <ul><li>전체 작업 27,240건 분석</li><li>설비 고장 5,313건 구조 진단</li><li>고장 다발 설비군 43% 집중 분석</li><li>운영 안정성과 예방정비 기반 강화</li></ul>
+      </div>
+      <div class="project reveal">
+        <div><span class="tag">SMART FACTORY / CBM</span><h3>Smart Factory 기반 설비관리 고도화</h3><p class="muted">센싱, 실시간 모니터링, 빅데이터 처리와 정비 의사결정을 연결했습니다.</p></div>
+        <ul><li>IoT 센서와 PLC 프로그램 연동</li><li>Grafana 기반 실시간 모니터링</li><li>진동·소음·온도·압력 등 다변수 센싱</li><li>상태기반정비(CBM) 체계 고도화</li></ul>
+      </div>
+      <div class="project reveal">
+        <div><span class="tag">SCM INNOVATION</span><h3>부품 SCM 리스크 최소화</h3><p class="muted">야간 긴급출고, 부외부품, 교체주기 정보를 분석해 운영 프로세스를 정비했습니다.</p></div>
+        <ul><li>야간 출고 Top 5 설비 비중 41% 분석</li><li>부외부품 입출고 활용 비중 36% 확인</li><li>교체주기 3,775건 업데이트</li><li>연간 약 2,000건·11% 수준의 개선 기대효과</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="career">
+    <div class="container grid grid-2">
+      <div class="section-head reveal">
+        <div class="eyebrow">Career Journey</div>
+        <h2>기술개발에서 제조혁신까지</h2>
+        <p class="lead">개발, 기술관리, 전략기획, 기술인사, 기술기획, 제조혁신과 생산지원을 연속적으로 경험했습니다.</p>
+      </div>
+      <div class="timeline reveal">
+        <div class="time-item"><div class="year">1990.10–1996.07</div><h3>Samsung Electronics</h3><p>음향사업부 개발팀 · CAD 응용 SW 개발</p></div>
+        <div class="time-item"><div class="year">1996.08–2000.11</div><h3>Samsung Commercial Vehicles</h3><p>기술관리 · 도면관리시스템 · PDM 도입</p></div>
+        <div class="time-item"><div class="year">2000.12–2012.03</div><h3>Samsung Electronics</h3><p>전략기획 · 기술인사 · LCD 연구운영</p></div>
+        <div class="time-item"><div class="year">2012.04–2026.06</div><h3>Samsung Display</h3><p>기술기획 · 제조혁신 · 생산지원</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">Consulting Services</div>
+        <h2>제공 가능한 자문 분야</h2>
+      </div>
+      <div class="grid grid-3">
+        <article class="card reveal"><h3>제조혁신 진단</h3><p>현장 인터뷰와 데이터를 기반으로 생산 저해요소와 개선 우선순위를 도출합니다.</p></article>
+        <article class="card reveal"><h3>Smart Manufacturing Roadmap</h3><p>기업 수준에 맞는 IoT, 데이터, CBM 단계별 실행 로드맵을 설계합니다.</p></article>
+        <article class="card reveal"><h3>설비 신뢰성 고도화</h3><p>고장 구조, 정비체계, 부품 운영을 분석하여 가동 안정화 방안을 수립합니다.</p></article>
+        <article class="card reveal"><h3>기술전략 및 R&D 운영</h3><p>중장기 기술로드맵, 투자 우선순위, 과제 포트폴리오와 조직운영을 지원합니다.</p></article>
+        <article class="card reveal"><h3>SCM 및 부품 운영 최적화</h3><p>출고, 재고, 교체주기와 비표준 부품 운영 프로세스를 개선합니다.</p></article>
+        <article class="card reveal"><h3>조직운영 및 변화관리</h3><p>기술조직 운영과 협업체계, 변화과제의 실행과 정착을 지원합니다.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="contact">
+    <div class="container">
+      <div class="cta reveal">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>제조혁신의 다음 과제를<br>함께 이야기해 보십시오.</h2>
+          <p style="color:#dce7f2;margin-bottom:0">제조혁신, Smart Manufacturing, 기술전략 및 경영자문에 관한 상담을 환영합니다.</p>
+        </div>
+        <div class="btns">
+          <a class="btn gold" href="mailto:tsokay.kim@gmail.com?subject=제조혁신 상담문의">이메일 문의</a>
+          <a class="btn ghost" style="background:white" href="tel:+821035193852">010-3519-3852</a>
+          <a class="btn ghost" style="background:white" href="assets/Kim_Tae_Seob_Resume.pdf" download>이력서 받기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><strong>Kim Tae Seob</strong><div class="small">Manufacturing Innovation Advisor</div></div>
+    <div class="small">tsokay.kim@gmail.com · 경기도 용인시 · © 2026</div>
+  </div>
+</footer>
+
+<script>
+  const toggle=document.querySelector('.menu-toggle');
+  const menu=document.querySelector('.menu');
+  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
+  document.querySelectorAll('.menu a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
